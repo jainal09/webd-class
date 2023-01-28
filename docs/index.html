@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Portfolio Website-Jainal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- linking css file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top navbarScroll">
+        <div class="container">
+            <a class="navbar-brand" style="color: black;" href="#">Jainal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certifications">Certificates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#timeline">Work History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#work-history-table">Technology Experiences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- main banner -->
+    <section class="bgimage" id="home">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero-text">
+                    <h2 class="hero_title">Hi, it's me Jainal</h2>
+                    <div class="container1">
+                        <div class="typed-out">I am a Grad Student at NEU</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- about section-->
+    <section id="about">
+        <div class="container mt-4 pt-4">
+            <h1 class="text-center">About Me</h1>
+            <div class="row mt-4">
+                <div class="col-lg-4">
+                    <img src="images/about.png" class="imageAboutPage" alt="">
+                </div>
+
+                <div class="col-lg-8">
+                    <p>I am a graduate student at Northeastern University pursuing a Master of Science in Software Engineering
+                         Systems with a 4.0 GPA. I am proficient in a broad range of programming languages, frameworks, tools, 
+                         Databases, and Platforms including but not limited to Python, Java, Django, Flask, Fast-API, ReactJS, 
+                         Tailwind, Jinja, Docker, Apache Kafka, Rabbit MQ, Elastic Search, MYSQL, Mongo-DB, Postgres, Redis etc.
+                         </p>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <ul>
+                                <li>Name: Jainal Gosaliya</li>
+                                <li>Age: 22</li>
+                                <li>Occupation: Software Engineering</li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                                <li>Education: Bachelors of Engineering in Computer Science and Engineering</li>
+                                <li>Open to Work: Summer Internships 2023</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <p>
+                            Through an internship with your company, I will have the chance to put my knowledge and talents to use 
+                            in a challenging & practical environment, and I'm eager for the chance. </p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- services section-->
+    <section id="services">
+        <div class="container">
+            <h1 class="text-center">Skills</h1>
+            <div class="row">
+                <div class="col-lg-4 mt-4">
+                    <div class="card servicesText">
+                        <div class="card-body">
+                            <i class="fas servicesIcon fa-clock"></i>
+                            <h4 class="card-title mt-3">Frontend Development</h4>
+                            <p class="card-text mt-3">Website Development, Web apps developments, progressive web apps etc. Is proficent in 
+                                leveraging modern fronetend principles and frontend technologies
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-4">
+                    <div class="card servicesText">
+                        <div class="card-body">
+                            <i class='fas servicesIcon fa-layer-group'></i>
+                            <h4 class="card-title mt-3">Backend Development</h4>
+                            <p class="card-text mt-3"> Backend developments, databases systems, micro-services,
+                                cloud computing. Is proficent in leveraging modern backend principles and Backend technologies
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                    <div class="card servicesText">
+                        <div class="card-body">
+                            <i class='far servicesIcon fa-check-circle'></i>
+                            <h4 class="card-title mt-3">Fullstack Development</h4>
+                            <p class="card-text mt-3">Mern Stack, Django, NextJS. Is proficient in applying modern fronetend principles 
+                                and frontend technologies
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 mt-4">
+                    <div class="card servicesText">
+                        <div class="card-body">
+                            <i class='fas servicesIcon fa-search'></i>
+                            <h4 class="card-title mt-3">SEO</h4>
+                            <p class="card-text mt-3">Apply Search engine optimization process to improve quality and quantity of website traffic or a web page from search engines. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                    <div class="card servicesText">
+                        <div class="card-body">
+                            <i class='fas servicesIcon fa-shield-alt'></i>
+                            <h4 class="card-title mt-3">DevOps</h4>
+                            <p class="card-text mt-3">DevOps is a methodology in the software development and IT industry. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                    <div class="card servicesText">
+                        <div class="card-body">
+                            <i class='fas servicesIcon fa-wrench'></i>
+                            <h4 class="card-title mt-3">QA</h4>
+                            <p class="card-text mt-3">Quality assurance (QA) is any systematic process used to determine if a product or service meets quality standards. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- portfolio section-->
+    <section id="portfolio">
+        <div class="container mt-3">
+            <h1 class="text-center">Projects</h1>
+            <div class="row">
+                <div class="col-lg-4 mt-4">
+                    <div class="card card1">
+                        <img class="card-img-top" src="images/nerp.jpeg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">NERP Multi Search</h4>
+                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry.</p>
+                            <!-- <div class="text-center">
+                                <a href="#" class="btn btn-success">Link</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                    <div class="card card1 portfolioContent">
+                        <img class="card-img-top" src="images/atris.svg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">Atris</h4>
+                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry.</p>
+                            <!-- <div class="text-center">
+                                <a href="#" class="btn btn-success">Link</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                    <div class="card card1 portfolioContent">
+                        <img class="card-img-top" src="images/densecap.jpeg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">Densecap Container</h4>
+                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry.</p>
+                            <!-- <div class="text-center">
+                                <a href="#" class="btn btn-success">Link</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-4 mt-4">
+                    <div class="card card1 portfolioContent">
+                        <img class="card-img-top" src="images/mask.jpeg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">Mask Net</h4>
+                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry.</p>
+                            <!-- <div class="text-center">
+                                <a href="#" class="btn btn-success">Link</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                    <div class="card card1 portfolioContent">
+                        <img class="card-img-top" src="images/attendico.jpeg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">Attendico</h4>
+                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry.</p>
+                            <!-- <div class="text-center">
+                                <a href="#" class="btn btn-success">Link</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                    <div class="card card1 portfolioContent">
+                        <img class="card-img-top" src="images/os.png" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">More Projects</h4>
+                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry.</p>
+                            <!-- <div class="text-center">
+                                <a href="#" class="btn btn-success">Link</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section id="certifications">
+        <div class="container">
+            <h1 class="text-center">Certifications</h1>
+            <div class="row">
+
+                <div class="col-sm-12 col-lg-4 mt-4">
+                    <figure>
+                        <img src="images/cer1.png" alt="Certification 1">
+                        <figcaption>Intro to Data Structure and Algortithm</figcaption>
+                    </figure>
+                </div>
+
+                <div class="col-sm-12 col-lg-4 mt-4">
+                    <figure>
+                        <img src="images/testing01.png" alt="Certification 2">
+                        <figcaption>Certification 2</figcaption>
+                    </figure>
+                </div>
+
+                <div class="col-sm-12 col-lg-4 mt-4">
+                    <figure>
+                        <img src="images/cert3.png" alt="Certification 3">
+                        <figcaption>Certification 3</figcaption>
+                    </figure>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Timeline -->
+<section id="#timeline" class="pt-5 pb-1">
+    <h1 class="text-center">Work History</h1>
+  <ul class="timeline">
+    <li class="timeline-item mb-5">
+      <h5 class="fw-bold">Pirhoalpha Research (ActiveBuildings)</h5>
+      <p class="text-muted mb-2 fw-bold">Software Development Engineer</p>
+      <p class="text-muted mb-2 fw-bold">Aug 2021 - Jul 2022</p>
+      <p class="text-muted">
+        Designed real-time architecture that process data posted from IoT sensor
+        devices using secure cloud-based resilient backend Developed frontend web app 
+        which is connected to this architecture that displays all processed data points 
+        and real-time data Implemented a multi-tenant system that allows enterprises to 
+        view and manage IoT devices globally and virtually with RBAC Enhanced the system to
+        provide real-time, periodic alert, auto report and notifications for monitoring all 
+        the end devices globally Utilized tools and technologies including ReactJS, NodeJS, 
+        Django, MongoDB, Docker, AWS [ECS, EC2, Lambda, SNS, Cache]
+      </p>
+    </li>
+
+    <li class="timeline-item mb-5">
+      <h5 class="fw-bold">Glib.ai</h5>
+      <p class="text-muted mb-2 fw-bold">Software Development Intern </p>
+      <p class="text-muted mb-2 fw-bold">Feb 2021 - Aug 2021</p>
+      <p class="text-muted">
+        Implemented software components for a financial reports automation product used by banks and 
+        investment organizations Developed micro-services for automated processing and analysis of multimodal 
+        financial document using deep learning models Deployed this product on Google Cloud Platform (GCP) with
+        high availability, low-latency and scalability across multiple region Improved the system performance by 
+        up to 27% through message queues and load processing across multiple virtual machines in a distributed node
+        architecture using Google Cloud Run, Cloud Task, Celery and Rabbit MQ
+      </p>
+    </li>
+
+    <li class="timeline-item mb-5">
+      <h5 class="fw-bold">CodeMastr Apps</h5>
+      <p class="text-muted mb-2 fw-bold">Software Development Intern </p>
+      <p class="text-muted mb-2 fw-bold">Jun 2019 - Aug 2019</p>
+      <p class="text-muted">
+        Developed backend systems for a cloud storage product, including API design, algorithm implementations and
+         CI-CD pipelines Implemented automated asynchronous content moderation service for flagging uploaded user-generated 
+         content of the app Improved the system performance by integrating producer subscriber model with a multi-worker and 
+         broker architecture Utilized Elastic Search & IBM Watson to index and search multimodal content using multi-parameter
+          & auto extracted tags
+      </p>
+    </li>
+
+  </ul>
+</section>
+
+    <section id="work-history-table">
+        <h2 class="text-center">Tech Experiences</h2>
+        <table>
+          <tr>
+            <th>Technology</th>
+            <th>Experiences</th>
+          </tr>
+
+          <tr>
+            <td>Programming Languages</td>
+            <td>Python, Java, Javascript, CSS, Go, HTML</td>
+          </tr>
+          
+          <tr>
+            <td>Frameworks</td>
+            <td>Django, Flask, Fast API, Java Spring, NodeJS, Express JS, Graph QL, ReactJS,
+                Tailwind, Jinja, Docker, Docker Compose, Apache Kafka, Rabbit MQ, Type-Sense, Elastic Search, Log Stash, Kibana</td>
+          </tr>
+
+          <tr>
+            <td>Databases</td>
+            <td>MYSQL, Mongo DB, PostgreSQL, Redis, Azure Cosmos DB, Firebase</td>
+          </tr>
+          
+        </table>
+      </section>
+
+
+
+
+<!-- Section: Timeline -->
+    <!-- contact section-->
+    <section id="contact">
+        <div class="container mt-3 contactContent">
+            <h1 class="text-center">Contact Me</h1>
+
+            <div class="row mt-4">
+                <div class="col-lg-6">
+                    <!-- to edit google map goto https://www.embed-map.com type your location, generate html code and copy the html  -->
+                    <div style="max-width:100%;overflow:hidden;color:red;width:500px;height:500px;">
+                        <div id="embedmap-canvas" style="height:100%; width:100%;max-width:100%;">
+                            <iframe style="height:100%;width:100%;border:0;" frameborder="0"
+                                src="https://www.google.com/maps/embed/v1/place?q=Northeastern%University&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+                            </iframe>
+                        </div>
+                        <a class="googlemaps-html" href="https://www.embed-map.com"
+                            id="get-data-forembedmap">https://www.embed-map.com</a>
+                        <style>
+                            #embedmap-canvas img {
+                                max-width: none !important;
+                                background: none !important;
+                                font-size: inherit;
+                                font-weight: inherit;
+                            }
+                        </style>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- form fields -->
+                    <form  action="https://formspree.io/f/mbjedgpg"
+                    method="POST">
+                        <input type="text" class="form-control form-control-lg" placeholder="Name">
+                        <input type="email" class="form-control mt-3" placeholder="Email">
+                        <input type="tel" class="form-control mt-3" placeholder="Phone Number">
+                        <input type="text" class="form-control mt-3" placeholder="Subject">
+                        <div class="mb-3 mt-3">
+                            <textarea class="form-control" rows="5" id="comment" name="text"
+                                placeholder="Project Details"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success mt-3">Contact Me</button>
+                    </form>
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- footer section-->
+    <footer id="footer">
+        <div class="container-fluid">
+            <!-- social media icons -->
+            <div class="social-icons mt-4">
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:jainal09gosalia@gmail.com" target="_blank"><i class="fab fa fa-envelope"></i></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- load javascript after loading all html content -->
+    <script src="script/script.js"></script>
+
+</body>
+
+</html>
