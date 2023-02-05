@@ -100,21 +100,30 @@ function check() {
 }
 check();
 
+// Show/hide bottom row when a table row is clicked
 function showBottom(i) {
+  // Get the next row (bottom row) of the clicked row
   if (table.rows[i + 1].style.display == "none") {
+    // If bottom row is currently hidden, show it and rotate the down arrow
     table.rows[i + 1].style.display = "";
     table.rows[i].cells[0].children[3].style.transform = "rotate(180deg)";
   } else {
+    // If bottom row is visible, hide it and rotate the down arrow back to original position
     table.rows[i + 1].style.display = "none";
     table.rows[i].cells[0].children[3].style.transform = "rotate(0deg)";
   }
 }
 
+// Add event listeners for various actions in the table
 for (let i = 1; i < table.rows.length; i += 2) {
+  // Checkbox click
   table.rows[i].cells[0].children[0].addEventListener("click", check);
+  // Down arrow click
   table.rows[i].cells[0].children[3].addEventListener("click", () => {
     showBottom(i);
   });
+
+  // Delete button click
   table.rows[i].cells[8].addEventListener("click", () => {
     table.rows[i].remove();
     table.rows[i].remove();
@@ -124,7 +133,9 @@ for (let i = 1; i < table.rows.length; i += 2) {
     alert("Edit the details of the selected row");
   });
 }
+// Add button click
 addNew.addEventListener("click", () => {
+  // Increase the count of students and add a new row to the table
   table.innerHTML += `
       <tr>
         <td>
@@ -156,5 +167,6 @@ addNew.addEventListener("click", () => {
       </tr>
   `;
   check();
+  // Call the check function and add event listeners
   addEventListeners();
 });
