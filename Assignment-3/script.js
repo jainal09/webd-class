@@ -1,28 +1,3 @@
-//Title constructor function that creates a Title object
-function Title(t1) {
-  this.mytitle = t1;
-}
-
-// prototype function for Title that returns the title's name
-Title.prototype.getName = function () {
-  return this.mytitle;
-};
-
-// function that generates a random integer less than the input max
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
-
-// object to store social media links
-var socialMedia = {
-  facebook: "http://facebook.com",
-  twitter: "http://twitter.com",
-  flickr: "http://flickr.com",
-  youtube: "http://youtube.com",
-};
-
-var t = new Title("CONNECT WITH ME!");
-
 // get reference to HTML table
 var table = document.getElementById("myTable");
 var addNew = document.getElementById("add");
@@ -133,6 +108,13 @@ for (let i = 1; i < table.rows.length; i += 2) {
     alert("Edit the details of the selected row");
   });
 }
+
+// function that generates a random integer less than the input max
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+
 // Add button click
 addNew.addEventListener("click", () => {
   // Increase the count of students and add a new row to the table
