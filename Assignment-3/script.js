@@ -43,7 +43,7 @@ function check() {
     if (table.rows[i].cells[0].children[0].checked) {
       table.rows[i].style.backgroundColor = "yellow";
       table.rows[i].cells[8].innerHTML = "<button onclick='alert(\"Selected record deleted successfully\")'>Delete</button>";
-      table.rows[i].cells[9].innerHTML = "<button>Edit</button>";      
+      table.rows[i].cells[9].innerHTML = "<button>Edit</button>";
       count++;
     } else {
       table.rows[i].style.backgroundColor = "#fff";
