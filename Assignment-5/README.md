@@ -83,10 +83,17 @@ icon class: Used to add a specific icon to an element.
 fs-* classes: Used to set the font size of an element.
 
 text-primary class: Used to set the color of text to the primary color.
+
 svg tag: Used to add an SVG image.
+
 path tag: Used to define a path to be used in an SVG image.
+
 circle tag: Used to define a circle to be used in an SVG image.
+
 polyline tag: Used to define a polyline to be used in an SVG image.
+
 line tag: Used to define a line to be used in an SVG image.
+
 h5 tag: Used to create a heading for a section of content.
+
 p tag: Used to create a paragraph of text.
