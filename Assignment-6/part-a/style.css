@@ -1,0 +1,67 @@
+/* Center the calculator on the page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+  /* Style the calculator form */
+  form {
+    display: flex-direction;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+  }
+  
+  /* Style the input fields */
+  input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  /* Style the buttons */
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #3E8E41;
+  }
+  
+  /* Style the error message */
+  #error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  /* Style the result field */
+  #result {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f2f2f2;
+  }
+  

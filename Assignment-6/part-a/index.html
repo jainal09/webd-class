@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="flex-container">
+    <div>
+    <h1 style="text-align: center;">Login Page</h1>
+    </div>
+    <div>
+    <form id="login-form">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" />
+        <span class="error-message" id="email-error"></span>
+      </div>
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" />
+        <span class="error-message" id="username-error"></span>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" />
+        <span class="error-message" id="password-error"></span>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // jQuery code
+      $(document).ready(function () {
+        // Disable form submission on enter key press
+        $(window).keydown(function (event) {
+          if (event.keyCode === 13) {
+            event.preventDefault();
+            return false;
+          }
+        });
+
+        // Handle form submission
+        $("#login-form").submit(function (event) {
+          event.preventDefault(); // Prevent form from submitting
+
+          // Get form data
+          const email = $("#email").val();
+          const username = $("#username").val();
+          const password = $("#password").val();
+
+          // Validate email
+          if (!email) {
+            $("#email-error").text("Email is required.");
+          } else if (!isValidEmail(email)) {
+            $("#email-error").text("Please enter a valid @northeastern.edu email address.");
+          } else {
+            $("#email-error").text("");
+          }
+
+          // Validate username
+          if (!username) {
+            $("#username-error").text("Username is required.");
+          } else if (containsSpecialCharacters(username)) {
+            $("#username-error").text("Username cannot contain special characters.");
+          } else if (username.length < 4 || username.length > 20) {
+            $("#username-error").text("Username must be between 4 and 20 characters.");
+          } else {
+            $("#username-error").text("");
+}      // Validate password
+      if (!password) {
+        $("#password-error").text("Password is required.");
+      } else if (containsSpecialCharacters(password)) {
+        $("#password-error").text("Password cannot contain special characters.");
+      } else if (password.length < 8 || password.length > 20) {
+        $("#password-error").text("Password must be between 8 and 20 characters.");
+      } else {
+        $("#password-error").text("");
+      }
+
+      // If all validations are successful, redirect to second page
+      if ($("#email-error").text() === "" && $("#username-error").text() === "" && $("#password-error").text() === "") {
+        // Save logged-in user name to sessionStorage
+        sessionStorage.setItem("username", username);
+
+        // Redirect to second page
+        window.location.href = "second-page.html";
+      }
+    });
+
+    // Helper functions
+    function isValidEmail(email) {
+      return /@northeastern\.edu$/.test(email);
+    }
+
+    function containsSpecialCharacters(str) {
+      return /[@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(str);
+    }
+  });
+</script>
+</body>
+</html>

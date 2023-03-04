@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1 style="margin: inherit;">Welcome <span id="username"></span></h1>
+    <label>Number 1:</label>
+    <input type="text" id="num1"><br>
+    <label>Number 2:</label>
+    <input type="text" id="num2"><br>
+
+    <button class="calc-btn" data-operator="add">Add</button>
+    <button class="calc-btn" data-operator="subtract">Subtract</button>
+    <button class="calc-btn" data-operator="multiply">Multiply</button>
+    <button class="calc-btn" data-operator="divide">Divide</button>
+
+    <p id="calc-error" style="color: red; display: none;"></p>
+
+    <label>Result:</label>
+    <input type="text" id="result" readonly>
+    
+    <script>
+        // jQuery code
+        $(document).ready(function () {
+            // Get logged-in user's username from sessionStorage
+            const username = sessionStorage.getItem("username");
+
+            // Display username on the page
+            $("#username").text(username);
+
+            // Add event listener to all calculator buttons
+            $(".calc-btn").click(function () {
+                // Validate input fields
+                const num1 = parseFloat($("#num1").val());
+                const num2 = parseFloat($("#num2").val());
+
+                if (isNaN(num1) || isNaN(num2)) {
+                    $("#calc-error").text("Please enter valid numbers.").show();
+                    return;
+                } else {
+                    $("#calc-error").hide();
+                }
+
+                // Get selected operator
+                const operator = $(this).data("operator");
+
+                // Perform calculation using arrow function
+                const result = (() => {
+                    switch (operator) {
+                        case "add":
+                            return num1 + num2;
+                        case "subtract":
+                            return num1 - num2;
+                        case "multiply":
+                            return num1 * num2;
+                        case "divide":
+                            return num1 / num2;
+                        default:
+                            return 0;
+                    }
+                })();
+
+                // Display result
+                $("#result").val(result);
+            });
+        });
+    </script>
+</body>
+</html>
