@@ -1,0 +1,109 @@
+@use "variables" as *;
+
+// Define function to convert pixels to rem
+@function rem($pixels) {
+  @return ($pixels / 16) * 1rem;
+}
+
+$image-path: "/images";
+
+// Login page styles
+.login-page {
+  background-image: url("#{$image-path}/login-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .logo {
+    img {
+      content: url("/images/logo.svg");
+      width: 8.8125rem;
+      height: 1.375rem;
+    }
+  }
+
+  form {
+    background-color: #fff;
+    padding: rem(32); // Use the rem() function to convert pixels to rem
+    border-radius: rem(24); // Use the rem() function to convert pixels to rem
+    width: rem(400); // Use the rem() function to convert pixels to rem
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      color: $secondary-color;
+      font-size: rem(24); // Use the rem() function to convert pixels to rem
+      margin-bottom: rem(32); // Use the rem() function to convert pixels to rem
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      @extend %input;
+    }
+
+    button {
+      @extend %button;
+      background-color: $primary-color;
+      color: #fff;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+
+    .forgot-password {
+      font-size: rem(14); // Use the rem() function to convert pixels to rem
+      text-align: right;
+
+      margin-top: rem(16); // Use the rem() function to convert pixels to rem
+      a {
+        color: $secondary-color;
+        font-weight: bold;
+
+        &:hover {
+          color: darken($secondary-color, 20%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .login-page {
+    form {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    form {
+      padding: rem(16); // Use the rem() function to convert pixels to rem
+      border-radius: rem(16); // Use the rem() function to convert pixels to rem
+    }
+
+    h2 {
+      font-size: rem(20); // Use the rem() function to convert pixels to rem
+      margin-bottom: rem(16); // Use the rem() function to convert pixels to rem
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      font-size: rem(14); // Use the rem() function to convert pixels to rem
+      padding: rem(12); // Use the rem() function to convert pixels to rem
+    }
+
+    button {
+      font-size: rem(14); // Use the rem() function to convert pixels to rem
+      padding: rem(12); // Use the rem() function to convert pixels to rem
+    }
+
+    .forgot-password {
+      font-size: rem(12); // Use the rem() function to convert pixels to rem
+    }
+  }
+}
