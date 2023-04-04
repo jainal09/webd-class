@@ -1,26 +1,10 @@
-const express = require('express');
-const mongoose = require('mongoose');
-
-const bodyParser = require('body-parser')
-const app = express();
-
 //import the model
-const User = require('./models');
+import User from '../models/models.js';
 // import the error handler
-const errorHandler = require('./errorHandler');
+import errorHandler from '../services/errorHandler.js';
+import bcrypt from 'bcryptjs';
 
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
-
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.log(err));
-
-
-// Create a new user
-app.post('/user/create', async (req, res) => {
-    console.log(req.body);
+const createUser = async (req, res) => {
     const { fullName, email, password } = req.body;
 
     // Validate inputs
@@ -29,7 +13,7 @@ app.post('/user/create', async (req, res) => {
     }
 
     try {
- 
+
 
         // Create the user
         const user = new User({ fullName, email, password: password });
@@ -40,13 +24,38 @@ app.post('/user/create', async (req, res) => {
     } catch (err) {
         // Handle errors
         errorHandler(err, res);
-        
-    }
-        
-});
 
-// Update user details
-app.put('/user/edit/:email', async (req, res) => {
+    }
+}
+
+const loginUser = async (req, res) => {
+    const { email, password } = req.body;
+    // validate inputs
+    if (!email || !password) {
+        return res.status(400).send({ message: 'Please provide all required fields' });
+    }
+    try {
+        // Find the user in mongodb by email
+        const user = await User.findOne({ email });
+        // Throw error if user not found
+        if (!user) {
+            return res.status(404).send({ message: 'User not found' });
+        }
+        // Check if password is correct
+        const isMatch = await bcrypt.compare(password, user.password);
+        // Throw error if password is incorrect
+        if (!isMatch) {
+            return res.status(400).send({ message: 'Invalid password' });
+        }
+        // Send success response
+        res.send({ message: 'Login successful' });
+    } catch (err) {
+        // Handle errors
+        errorHandler(err, res);
+    }
+}
+
+const updateUser = async (req, res) => {
     const { fullName, password } = req.body;
     const email = req.params.email;
 
@@ -83,10 +92,8 @@ app.put('/user/edit/:email', async (req, res) => {
         // Handle errors
         errorHandler(err, res);
     }
-});
-
-// Delete user 
-app.delete('/user/delete', async (req, res) => {
+}
+const deleteUser = async (req, res) => {
     const email = req.body.email;
     try {
         const deletedUser = await User.findOneAndDelete({ email });
@@ -98,10 +105,9 @@ app.delete('/user/delete', async (req, res) => {
         console.error(err);
         res.status(500).json({ message: 'Internal server error' });
     }
-});
+}
 
-// GET all users
-app.get('/user/getAll', async (req, res) => {
+const getAllUsers = async (req, res) => {
     try {
         const users = await User.find({}, 'fullName email password'); // retrieve full name, email, and password
         res.json(users);
@@ -109,14 +115,5 @@ app.get('/user/getAll', async (req, res) => {
         console.error(err);
         res.status(500).send('Server Error');
     }
-});
-
-try {
-    // Start server
-    app.listen(3000, () => console.log('Server started'));
-} catch (err) {
-    // Handle errors
-    console.log(err);
-    res.status(500).send({ message: 'Internal server error' });
 }
-
+export  { createUser, loginUser, updateUser, deleteUser, getAllUsers };

@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const bcrypt = require('bcryptjs');
+import mongoose from 'mongoose';
+import bcrypt from 'bcryptjs';
 // Create User model
 const userSchema = new mongoose.Schema({
   fullName: {
@@ -52,6 +52,5 @@ userSchema.pre('save', function(next) {
   });
 });
 //Creating the collection Users
-const Users = mongoose.model('Users', userSchema)
-
-module.exports = Users;
+const Users = mongoose.model('Users', userSchema);
+export default Users;

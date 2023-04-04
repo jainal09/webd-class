@@ -1,4 +1,4 @@
-function errorHandler(err, res) {
+export default function errorHandler(err, res) {
     let errorMessage;
     switch (true) {
       case err.name === 'ValidationError':
@@ -34,5 +34,5 @@ function errorHandler(err, res) {
     }
   }
   
-  module.exports = errorHandler;
+
   
