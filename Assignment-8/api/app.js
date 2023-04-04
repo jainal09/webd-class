@@ -11,7 +11,7 @@ const apiRoutes = express.Router();
 apiRoutes.use('/auth', authRouter);
 
 // mount the user update routes at the /users path
-apiRoutes.use('/users', updateRouter);
+apiRoutes.use('/user', updateRouter);
 
 // mount the user retrieval routes at the /get path
 apiRoutes.use('/get', getUsersRouter);
