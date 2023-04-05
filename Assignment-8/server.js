@@ -2,8 +2,12 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import apiRoutes from './api/app.js';
+import cors from 'cors';
 
 const app = express();
+
+// enable CORS
+app.use(cors());
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -17,7 +21,7 @@ mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true, useU
 
 try {
     // Start server
-    app.listen(3000, () => console.log('Server started'));
+    app.listen(3001, () => console.log('Server started'));
 } catch (err) {
     // Handle errors
     console.log(err);
